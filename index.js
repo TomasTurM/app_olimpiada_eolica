@@ -1,4 +1,4 @@
-var res
+var Chart = require('chart.js');
 
 fetch('https://randomuser.me/api/')
 .then(response => response.json())
@@ -7,13 +7,14 @@ fetch('https://randomuser.me/api/')
 var ctx = document.getElementById('canvas');
 
 var myChart = new Chart(ctx, {
-    type: line,
+
+    type: 'line',
+    
     data: {
         labels: ['i', 'wd', 'ws', 'r'],
         datasets: [{
             label: 'Grafico de linea',
-            backgroundColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2]
+            data: [0, 10, 5, 2, 20, 30, 45]
         }]
     },
 
